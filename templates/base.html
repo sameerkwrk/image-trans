@@ -1,12 +1,6 @@
 {% macro base() %}
-<body class="px-2 py-2">
-  <nav x-data="{currentPage: window.location.pathname,pages:[
-      '/','/about','/bot','/discord'],urls:{
-        '/':'HOME',
-        '/about':'ABOUT',
-        '/bot':'BOT',
-        '/discord':'DISCORD'
-      }}" id="nav" class="flex items-center bg-cyan-700 shadow-lg h-16 w-full shadow-cyan-400/50 rounded-lg">
+<link rel="stylesheet" href="styles/base.css">
+  <nav id="nav" class="flex items-center bg-cyan-700 shadow-lg h-16 w-full shadow-cyan-400/50 rounded-lg">
     <div class="flex items-stretch">
       <div class="pl-5 flex items-center space-x-4">
         <div id="nav-image">
@@ -19,21 +13,19 @@
           <div class="flex-none">
             <ul class="menu bg-cyan-500 menu-horizontal p-0 font-sans rounded-lg">
               <li tabindex="0">
-                <a>
-                  Menu
-                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                <a class="page-reactive">
                 </a>
                 <ul class="p-2 bg-cyan-500">
-                  <li><a>Home</a></li>
-                  <li><a>About</a></li>
-                  <li><a>Converter</a></li>
+                  <li><a onclick="window.location.href = '/'">Home</a></li>
+                  <li><a href="/about">About</a></li>
+                  <li><a href="/converter">Converter</a></li>
                 </ul>
               </li>
             </ul>
           </div>
-      </div>
+        </div>
     </div>
   </nav>
+  <script src="scripts/nav.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine-ie11.min.js" integrity="sha512-Atu8sttM7mNNMon28+GHxLdz4Xo2APm1WVHwiLW9gW4bmHpHc/E2IbXrj98SmefTmbqbUTOztKl5PDPiu0LD/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</body>
 {% endmacro %}

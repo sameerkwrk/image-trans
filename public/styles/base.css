@@ -1,0 +1,3 @@
+.page-reactive::first-letter {
+  text-transform: capitalize;
+}

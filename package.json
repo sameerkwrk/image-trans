@@ -13,9 +13,11 @@
     "start": "npm run build && node index.js"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "daisyui": "^2.27.0",
     "express": "^4.17.1",
     "flowbite": "^1.5.3",
+    "formidable": "^2.0.1",
     "nunjucks": "^3.2.3",
     "pdfkit": "^0.13.0"
   },
