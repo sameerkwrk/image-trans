@@ -21,4 +21,3 @@ pageReactiveMenuBtn.innerHTML = (() => {
       : "";
   }
 })();
-pageReactiveMenu.appendChild(downSVG);

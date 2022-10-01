@@ -26,7 +26,8 @@ fileHolder.addEventListener("change", (input) => {
   }
   console.log(input.target.files);
   imageDisplay.innerHTML = "";
-  input.target.files.forEach((file) => {
+  const files = Array.from(input.target.files);
+  files.forEach((file) => {
     const image = document.createElement("img");
     image.src = URL.createObjectURL(file);
     image.className = "max-w-full h-auto";

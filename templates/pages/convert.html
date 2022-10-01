@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/converter.css" />
     <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/base.css">
     <title>The_flaSK</title>
   </head>
   <body class="px-2 py-2">
@@ -16,7 +17,7 @@
       <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">() => Convert /*convert images to pdf*/</p>
     </div>
    
-    <form action="/convert" method="post" enctype="multipart/form-data px-10 py-10" id="upload-form">
+    <form action="/convert" method="post" enctype="multipart/form-data" class=" px-10 py-10" id="upload-form">
       <label
         for="dropzone-file"
         class="my-5 mx-5 flex flex-col justify-center items-center w-full h-64 bg-gray-50 rounded-lg border-2 border-gray-300 border-dashed cursor-pointer dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
@@ -47,13 +48,12 @@
         <input
           autocomplete="off"
           multiple="multiple"
-          class="file-holder"
+          class="file-holder hidden"
           id="dropzone-file"
           multiple
           type="file"
           style="border-radius: 8px;"
           accept="image/*"
-          class="hidden"
           name="photos"
           required
         />
