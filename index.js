@@ -7,7 +7,6 @@ import PDFDocument from "pdfkit";
 import { randomBytes } from "crypto";
 import sizeOf from "buffer-image-size";
 import cors from "cors";
-import { converter } from "./functions/converter.js";
 import multer from "multer";
 
 const __filename = fileURLToPath(import.meta.url);
