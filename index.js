@@ -54,6 +54,7 @@ app.get("/converter", function (req, res) {
 });
 
 app.get("/about", function (req, res) {
+  res.setHeader("Content-Type", "application/pdf");
   res.render("./pages/about.html");
 });
 
