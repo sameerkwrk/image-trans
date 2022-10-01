@@ -3,30 +3,12 @@ import nunjucks from "nunjucks";
 import { resolve } from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
-import PDFDocument from "pdfkit";
-import { createWriteStream } from "fs";
-import { randomBytes } from "crypto";
 import cors from "cors";
-import formidable from "formidable";
+import { converter } from "./functions/converter.js";
+import multer from "multer";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
-const pdf = new PDFDocument();
-
-const converter = (images) => {
-  const tocken = randomBytes(6).toString("hex");
-  pdf.pipe(createWriteStream(`${tocken}_theflask.pdf`));
-  images.forEach((element) => {
-    pdf.addPage().image(element, {
-      fit: [500, 400],
-      align: "center",
-      valign: "center",
-    });
-  });
-
-  pdf.end();
-};
 
 const app = express();
 app.use(cors());
@@ -40,39 +22,26 @@ nunjucks.configure(resolve(__dirname, "templates"), {
 });
 
 app.get("/", function (req, res) {
-  console.log("A New request encoutered", req.ip);
   res.render("./pages/home.html");
 });
 
 app.get("/bot", function (req, res) {
-  console.log("A New request encoutered", req.ip);
   res.render("./pages/bot.html");
 });
 app.get("/converter", function (req, res) {
-  console.log("A New request encoutered", req.ip);
   res.render("./pages/convert.html");
 });
 
 app.get("/about", function (req, res) {
-  console.log("A New request encoutered", req.ip);
   res.render("./pages/about.html");
 });
 
-app.post("/convert", (req, res, next) => {
-  const form = formidable({ multiples: true });
-  let status;
-  form.parse(req, (err, fields, files) => {
-    if (err) {
-      next(err);
-      status = false;
-      return;
-    }
-    console.log({ files });
-  });
-  status = true;
-  res.json({ status: status });
+app.post("/convert", multer().array("photos", 10), (req, res, next) => {
+  converter(req.files, res);
 });
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT);
+app.listen(PORT, () => {
+  console.log(`The_flaSK Server Started At localhost:${PORT}/`);
+});
