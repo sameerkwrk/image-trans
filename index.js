@@ -58,7 +58,6 @@ app.get("/about", function (req, res) {
 });
 
 app.post("/convert", multer().array("photos", 10), (req, res, next) => {
-  console.log(req.files);
   converter(req.files, res);
 });
 
