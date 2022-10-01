@@ -58,6 +58,7 @@ app.get("/about", function (req, res) {
 });
 
 app.post("/convert", multer().array("photos", 10), (req, res, next) => {
+  res.setHeader("Content-Type", "application/pdf");
   converter(req.files, res);
 });
 
