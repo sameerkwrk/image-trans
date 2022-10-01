@@ -18,7 +18,6 @@ app.use(express.static("public"));
 app.use(express.json());
 
 const converter = (images, res) => {
-  images.splice(1, 1);
   const pdf = new PDFDocument({
     size: "a5",
     autoFirstPage: false,
