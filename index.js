@@ -2,10 +2,9 @@ import express from "express";
 import nunjucks from "nunjucks";
 import { resolve } from "path";
 import { fileURLToPath } from "url";
+import converter from "./converter.js";
 import { dirname } from "path";
-import PDFDocument from "pdfkit";
-import { randomBytes } from "crypto";
-import sizeOf from "buffer-image-size";
+import helmet from "helmet";
 import cors from "cors";
 import multer from "multer";
 
@@ -16,25 +15,7 @@ const app = express();
 app.use(cors());
 app.use(express.static("public"));
 app.use(express.json());
-
-const converter = (images, res) => {
-  const pdf = new PDFDocument({
-    size: "a5",
-    autoFirstPage: false,
-  });
-  const tocken = randomBytes(6).toString("hex") + ".pdf";
-  pdf.info["Title"] = tocken;
-  images.forEach((element) => {
-    const dimensions = sizeOf(element.buffer);
-    pdf.addPage().image(element.buffer, {
-      align: "center",
-      valign: "center",
-      fit: [dimensions.height, dimensions.width],
-    });
-  });
-  pdf.pipe(res);
-  pdf.end();
-};
+app.use(helmet());
 
 nunjucks.configure(resolve(__dirname, "templates"), {
   express: app,
@@ -54,7 +35,6 @@ app.get("/converter", function (req, res) {
 });
 
 app.get("/about", function (req, res) {
-  res.setHeader("Content-Type", "application/pdf");
   res.render("./pages/about.html");
 });
 

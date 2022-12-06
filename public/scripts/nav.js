@@ -1,4 +1,3 @@
-const pageReactiveMenuBtn = document.querySelector(".page-reactive");
 const downSVG = document.createElement("svg");
 const path = document.createElement("path");
 
@@ -9,15 +8,3 @@ downSVG.xmlns = "http://www.w3.org/2000/svg";
 downSVG.width = 24;
 downSVG.height = 24;
 downSVG.appendChild(path);
-
-pageReactiveMenuBtn.innerHTML = (() => {
-  const currentPath = window.location.pathname.replace("/", "");
-
-  if (currentPath === "") {
-    return "Home";
-  } else {
-    return currentPath && typeof currentPath === "string"
-      ? currentPath.charAt(0).toUpperCase() + currentPath.slice(1)
-      : "";
-  }
-})();

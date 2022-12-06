@@ -1,9 +1,8 @@
 import PDFDocument from "pdfkit";
-import { randomBytes } from "crypto";
 import sizeOf from "buffer-image-size";
+import { randomBytes } from "crypto";
 
 const converter = (images, res) => {
-  images.splice(1, 1);
   const pdf = new PDFDocument({
     size: "a5",
     autoFirstPage: false,
@@ -12,14 +11,15 @@ const converter = (images, res) => {
   pdf.info["Title"] = tocken;
   images.forEach((element) => {
     const dimensions = sizeOf(element.buffer);
+    console.log(dimensions);
     pdf.addPage().image(element.buffer, {
       align: "center",
       valign: "center",
-      fit: [dimensions.height, dimensions.width],
+      fit: [250, 300],
     });
   });
   pdf.pipe(res);
   pdf.end();
 };
 
-export { converter };
+export default converter;

@@ -10,21 +10,38 @@
   </head>
   <body class="px-2 py-2">
     {{ base() }}
-    <div class="container text-center">
-      <h1
-        class="mb-4 text-3xl font-bold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"
+    <div class="container flex-col flex justify-center items-center">
+      <div class="hero min-h-screen">
+        <div class="hero-content flex-col lg:flex-row-reverse">
+          <img src="images/dev.jpeg" class="max-w-sm rounded-lg shadow-2xl" />
+          <div>
+            <h1
+              class="mb-4 text-3xl font-bold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"
+            >
+              Hi , I am
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-cyan-700"
+                >The_flaSK</span
+              >
+            </h1>
+            <p class="py-6">
+              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
+              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
+              et a id nisi.
+            </p>
+            <a href="/converter" class="btn border-collapse bg-cyan-600"
+              >Projects</a
+            >
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex child:w-10 child:h-10 gap-5 child-hover:shadow-lg child-hover:shadow-cyan-600"
       >
-        Hi , I am
-        <span
-          class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-cyan-700"
-          >The_flaSK</span
-        >
-      </h1>
-      <p
-        class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400"
-      >
-        () => Home /*my home*/
-      </p>
+        <img src="images/js.png" alt="" />
+        <img src="images/njks.png" alt="" />
+        <img src="images/tailwind.png" alt="" />
+      </div>
     </div>
   </body>
 </html>
