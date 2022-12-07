@@ -11,7 +11,6 @@ const converter = (images, res) => {
   pdf.info["Title"] = tocken;
   images.forEach((element) => {
     const dimensions = sizeOf(element.buffer);
-    console.log(dimensions);
     pdf.addPage().image(element.buffer, {
       align: "center",
       valign: "center",

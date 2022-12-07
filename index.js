@@ -39,11 +39,14 @@ app.get("/about", function (req, res) {
 });
 
 app.post("/convert", multer().array("photos", 10), (req, res, next) => {
+  res.set({
+    "Content-Type": "application/pdf",
+  });
   converter(req.files, res);
 });
 
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log(`The_flaSK Server Started At localhost:${PORT}/`);
+  console.log(`The_flaSK Server Started At http://localhost:${PORT}/`);
 });
