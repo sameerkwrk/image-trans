@@ -7,17 +7,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/converter.css" />
     <link rel="stylesheet" href="styles/main.css" />
-    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/base.css" />
     <title>The_flaSK</title>
   </head>
   <body class="px-2 py-2">
     {{ base() }}
     <div class="container text-center">
-      <h1 class="mb-4 text-3xl font-bold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">Converter <span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-cyan-700">The_flaSK</span> </h1>
-      <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">() => Convert /*convert images to pdf*/</p>
+      <h1
+        class="mb-4 text-3xl font-bold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"
+      >
+        Converter
+        <span
+          class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-cyan-700"
+          >The_flaSK</span
+        >
+      </h1>
+      <p
+        class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400"
+      >
+        () => Convert /*convert images to pdf*/
+      </p>
     </div>
-   
-    <form action="/convert" method="post" enctype="multipart/form-data" class=" px-10 py-10" id="upload-form">
+
+    <form
+      action="/convert"
+      method="post"
+      enctype="multipart/form-data"
+      class="px-10 py-10"
+      id="upload-form"
+    >
       <label
         for="dropzone-file"
         class="my-5 mx-5 flex flex-col justify-center items-center w-full h-64 bg-gray-50 rounded-lg border-2 border-gray-300 border-dashed cursor-pointer dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
@@ -52,31 +70,44 @@
           id="dropzone-file"
           multiple
           type="file"
-          style="border-radius: 8px;"
+          style="border-radius: 8px"
           accept=".jpeg,.png,.jpg"
           name="photos"
           required
         />
       </label>
-    <div class="container text-center">
-      <h1 class="mb-4 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-2xl lg:text-3xl dark:text-white">Selected <span class="underline underline-offset-3 decoration-4 decoration-cyan-600 dark:decoration-cyan-600">Images</span></h1>
-    </div>
-    <div class="images-holder mx-10 my-5">
-      <div class="grid grid-cols-6 gap-4 image-display">
-      </div> 
+      <div class="container text-center">
+        <h1
+          class="mb-4 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-2xl lg:text-3xl dark:text-white"
+        >
+          Selected
+          <span
+            class="underline underline-offset-3 decoration-4 decoration-cyan-600 dark:decoration-cyan-600"
+            >Images</span
+          >
+        </h1>
       </div>
-      <button type="submit" id = "form-uploader" class="btn btn-block border-collapse bg-cyan-600 hover:bg-cyan-700 hover:border-collapse">
+      <div class="images-holder mx-10 my-5">
+        <div class="grid grid-cols-6 gap-4 image-display"></div>
+      </div>
+      <button
+        type="submit"
+        id="form-uploader"
+        class="btn btn-block border-collapse bg-cyan-600 hover:bg-cyan-700 hover:border-collapse"
+      >
         Upload Images
-        </button>
+      </button>
       <div class="toast warning-panel">
         <div class="alert alert-info bg-cyan-700 text-white">
           <div>
-            <span><span class="bolder">Error:</span> Cannot Upload More Than 10 Images !</span>
+            <span
+              ><span class="bolder">Error:</span> Cannot Upload More Than 10
+              Images !</span
+            >
           </div>
         </div>
       </div>
-</form>
-    </body>
+    </form>
     <script src="scripts/converter.js"></script>
   </body>
 </html>

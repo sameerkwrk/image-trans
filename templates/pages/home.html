@@ -10,10 +10,13 @@
   </head>
   <body class="px-2 py-2">
     {{ base() }}
-    <div class="container flex-col flex justify-center items-center">
+    <div
+      class="container flex-col lg:gap-0 flex gap-10 justify-center items-center"
+    >
       <div class="hero min-h-screen">
-        <div class="hero-content flex-col lg:flex-row-reverse">
-          <img src="images/dev.jpeg" class="max-w-sm rounded-lg shadow-2xl" />
+        <div
+          class="hero-content bg-cyan-100 rounded-lg gap-x-72 flex-col-reverse lg:flex-row"
+        >
           <div>
             <h1
               class="mb-4 text-3xl font-bold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"
@@ -24,15 +27,55 @@
                 >The_flaSK</span
               >
             </h1>
-            <p class="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+            <p><b>The_flaSK</b> Portfolio website</p>
+            <p class="pt-6 pb-3">
+              Backend in
+              <a
+                href="https://expressjs.com/"
+                class="font-med<b>Flowbite UI</b>ium text-blue-600 underline dark:text-blue-500 hover:no-underline"
+                ><b>Express</b></a
+              >
+              (NodeJS) ,
+              <a
+                href="http://expressjs.com/en/resources/middleware/multer.html"
+                class="font-med<b>Flowbite UI</b>ium text-blue-600 underline dark:text-blue-500 hover:no-underline"
+                ><b>Multer</b></a
+              >
+              (multipart/data middleware) ,
+              <a
+                href="https://pdfkit.org/"
+                class="font-med<b>Flowbite UI</b>ium text-blue-600 underline dark:text-blue-500 hover:no-underline"
+                ><b>PDFKit</b></a
+              >
+              (PDF Library)
             </p>
+            <p class="pb-6 pt-3">
+              Frontend in
+              <a
+                href="https://mozilla.github.io/nunjucks/"
+                class="font-med<b>Flowbite UI</b>ium text-blue-600 underline dark:text-blue-500 hover:no-underline"
+                ><b>Nunjucks</b></a
+              >
+              (templating engine) ,
+              <a
+                href="https://tailwindcss.com/"
+                class="font-med<b>Flowbite UI</b>ium text-blue-600 underline dark:text-blue-500 hover:no-underline"
+                ><b>Tailwind</b></a
+              >
+              (CSS Framerwork) ,
+              <a
+                href="https://flowbite.com/"
+                class="font-med<b>Flowbite UI</b>ium text-blue-600 underline dark:text-blue-500 hover:no-underline"
+                ><b>Flowbite UI</b></a
+              >
+              (UI Components)
+            </p>
+
             <a href="/converter" class="btn border-collapse bg-cyan-600"
               >Projects</a
             >
           </div>
+          <img src="images/dev.jpg" class="max-w-sm rounded-lg shadow-2xl" />
         </div>
       </div>
       <div
@@ -41,6 +84,7 @@
         <img src="images/js.png" alt="" />
         <img src="images/njks.png" alt="" />
         <img src="images/tailwind.png" alt="" />
+        <img src="images/express.png" alt="" />
       </div>
     </div>
   </body>
